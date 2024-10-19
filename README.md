@@ -1,1 +1,1 @@
-# Frontend
+# EcoBeauty-Frontend
