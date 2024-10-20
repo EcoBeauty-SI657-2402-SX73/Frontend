@@ -9,7 +9,7 @@
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
-  
+
 
 
 }
@@ -38,7 +38,7 @@
     justify-content: center;
     height: auto;
   }
-  
+
 }
 .lista-izquierda {
   width: 18%;
@@ -51,7 +51,7 @@
   max-height: 100%;
   margin-left: 3vw;
   margin-right: 3vw;
-  
+
 }
 #fecha{
   text-align: center;
@@ -89,7 +89,7 @@
 .card h2{
   text-align: center;
   padding-left: 2%;
-  padding-right: 2%; 
+  padding-right: 2%;
   font-size: 1.5rem;
   margin-top: 10px;
   color: #0e9b47;
@@ -98,7 +98,7 @@
   color: #000000;
   padding-left: 2%;
   padding-right: 2%;
-  padding-bottom: 2%; 
+  padding-bottom: 2%;
   font-size: 1rem;
   margin-top: 15px;
   margin-bottom: 1%;
@@ -189,6 +189,7 @@
 -------------------------------------------------
 .tendencia-card {
   background-color: transparent;
+  margin: 20px 0;
   border: none;
   text-align: left;
   display: flex;
@@ -196,9 +197,9 @@
 }
 
 .tendencia-card h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .card,
@@ -248,7 +249,7 @@
 
 
 .container02{
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,7 +272,7 @@
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 12%;
-  
+
 }
 .card6 h5{
   padding-top: 1.5%;
@@ -284,7 +285,7 @@
   height: 95%;
   max-height: auto;
   max-width: auto;
- 
+
 }
 
 /*.card6 h5 {
@@ -311,9 +312,9 @@
   color: #f9f9f9
 }
 .card2 :hover{
-  
+
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
-  
+
 }
