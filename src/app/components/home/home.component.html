@@ -1,185 +1,102 @@
-<br>
-<br>
-<div class="container">
 
-    <!--Banner-->
 
-    <section class="banner">
-      <div class="containerB">
-        <div class="boxB col2">
-          <h1>Welcome to GreenGrow!</h1>
-          <p id="txtBanner">
-            Where the future of agriculture and self-sufficiency begins.
-            Discover how you can grow your own food at home, learn the latest
-            farming and hydroponics techniques, and join a passionate community.
-            Are you ready to transform your way of living?
-          </p>
-          <button class="banner-button">
-            Join Us
-          </button>
-        </div>
-        <div class="col1">
-            <img class="medium" src="https://cdn.discordapp.com/attachments/1223445236227903600/1254297092600627270/Mask_group.png?ex=6678fab2&is=6677a932&hm=5ac1386294602616204154e1b5e45165f8da16d0ffc16f911769fa69d44c33f3&.jpg">
-        </div>
+<main class="l-main">
+  <!--========== HOME ==========-->
+  <section class="home" id="home">
+    <div class="home_container bd-container bd-grid">
+      <div class="home_data">
+        <h1 class="home_title">Aprende y crea tus propios productos de cosmética natural</h1>
+        <h2 class="home_subtitle">En casa 🏠</h2>
+        <button mat-raised-button color="primary">Regístrate</button>
       </div>
-    </section>
+      <img src="assets/imagen_ecobeauty.png" alt="Gestion logística" class="home_img" />
+    </div>
+  </section>
 
-    <!--Cursos-->
-
-    <br>
-    <br>
-
-    <section class="destacados">
-      <div class="containerC">
-        <div class="boxC col3">
-          <h1>Most Featured</h1>
-        </div>
-        <div>
-          <p id="txtDestacados">
-            Cultivate your knowledge with GreenGrow's flagship courses and grow your passion for agriculture!
-          </p>
-        </div>
-        <div class="outer-container">
-          <div class="center">
-            <div class="single-row-grid">
-              <mat-card class="card-feature" *ngFor="let curso of featureCourses">
-                <mat-card-header class="card-header">
-                  <mat-card-title>
-                    <img [src]="curso.image" alt="{{ curso.name }}" class="card-header-img">
-                  </mat-card-title>
-                </mat-card-header>
-                
-                <mat-card-content class="card-content">
-                  <p class="card-content_name">{{ curso.name }}</p>
-                </mat-card-content>
-                <mat-card-actions class="mat-card-actions_wrapper">
-                  <button mat-button class="matBtn" (click)="redirectToPayment(curso)">$ {{ curso.price }}</button>
-                  <button mat-button class="matBtn">{{ curso.rating }} ⭐</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-          </div>
-        </div>
-        <br><br>
-        <div class="text-center">
-          <br><br>
-          <a class="destacados-button" href="/courses" >See All 🡢</a>
-        </div>
+  <!--========== ABOUT ==========-->
+  <section class="about section bd-container" id="about">
+    <div class="about_container bd-grid">
+      <div class="about_data">
+        <span class="section-subtitle about_initial">Servicios</span>
+        <h2 class="section-title-about_initial">Encuentre la mejor forma de crear sus cosmeticos naturales!</h2>
+        <p class="about_description">
+          Crea tus propios productos de belleza y cuidado personal con ingredientes naturales y orgánicos.
+          EcoBeauty te brinda la oportunidad de aprender a crear tus propios productos de belleza y cuidado personal
+          con ingredientes naturales y orgánicos. 🌿
+        </p>
+        <button mat-raised-button color="primary">Te animas? Úsalo ahora!</button>
       </div>
-      <br>
-      <br>
-    </section>
+      <img src="assets/servicio_ecobeauty.png" alt="Envasado de Lubricantes" class="about_img" />
+    </div>
+  </section>
 
-    <section class="destacados">
-      <div class="containerC">
-        <div class="boxC col3">
-          <h1>Other Products</h1>
-        </div>
-        <div>
-          <p id="txtDestacados">
-            
-          </p>
-          <nav class="section-navbar">
-            <ul>
-              <li
-                [class.active]="activeItem === 'home'"
-                (click)="handleItemClick('home')"
-              >
-                FUNDAMENTS
-              </li>
-              <li
-                [class.active]="activeItem === 'about'"
-                (click)="handleItemClick('about')"
-              >
-                HOME
-              </li>
-              <li
-                [class.active]="activeItem === 'services'"
-                (click)="handleItemClick('services')"
-              >
-                SUSTAINABILITY
-              </li>
-              <li
-                [class.active]="activeItem === 'contact'"
-                (click)="handleItemClick('contact')"
-              >
-                ADVANCED
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="center">
-          <div class="mat-card-cvr">
-            <mat-card class="card" *ngFor="let curso of otherCourses">
-              <mat-card-header>
-                <mat-card-title class="mat-card-container__image">
-                  <img class="mat-card__image" [src]="curso.image" alt="{{ curso.name }}">
-                </mat-card-title>
-              </mat-card-header>
-              
-              <mat-card-content>
-                <p class="mat-card__name">{{ curso.name }}</p>
-              </mat-card-content>
-              <mat-card-actions class="mat-card-actions_wrapper">
-                <button mat-button class="matBtn" (click)="redirectToPayment(curso)">$ {{ curso.price }}</button>
-                <button mat-button class="matBtn">{{ curso.rating }} ⭐</button>
-              </mat-card-actions>
-            </mat-card>
-          </div>
-        </div>
-        <br><br>
-        <div class="text-center">
-          <br><br>
-          <a class="destacados-button" href="/courses" >See All 🡢</a>
-        </div>
-      </div>
-      <br>
-      <br>
-    </section>
-
-    <div class="offer-section">
-      <div class="offer__image-container">
-        <img src="https://regaber.com/wp-content/uploads/2022/03/BLOG-REGABER.jpg" alt="Descriptive Image" class="offer__image">
-      </div>
-      <div class="offer__text-container">
-        <p class="offer__title">Exclusive Offer</p>
-        <p class="offer__description">"Unlock your ultimate upgrade! Get 40% off GreenGrow's Green Membership. Exclusive offer, for a limited time."</p>
-        <button class="offer__button">Purchase</button>
+  <!--========== TEAMMATES ==========-->
+  <section class="ad section bd-container" id="ad">
+    <span class="section-subtitle">Equipo</span>
+    <h2 class="section-title">Nuestro Equipo de Desarrollo</h2>
+    <div class="ad_container bd-grid">
+      <div class="ad_content equipo" *ngFor="let member of team">
+        <mat-card>
+          <img mat-card-image [src]="member.image" alt=""/>
+          <mat-card-content>
+            <h3 class="ad_name">{{ member.name }}</h3>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-    <!--Oferta-->
+  </section>
 
-    <section class="destacados">
-      <div class="containerC">
-        <div class="boxC col3">
-          <h1>Our Services</h1>
-        </div>
-        <div>
-          <p id="txtDestacados">
-            Your Gateway to a World of Knowledge and Collaboration
-          </p>
-        </div>
-        <div class="service__outer-container">
-          <div class="service__center">
-            <div class="service__single-row-grid">
-              <mat-card class="service__card" *ngFor="let offer of offers">
-                <mat-card-header class="service__card-header">
-                  <mat-card-title>
-                    <img [src]="offer.image" alt="{{ offer.title }}" class="service__card-header-img">
-                  </mat-card-title>
-                </mat-card-header>
-                
-                <mat-card-content class="service__card-content">
-                  <p class="service__card-title">{{ offer.title }}</p>
-                  <p>{{ offer.description }}</p>
-                </mat-card-content>
-              </mat-card>
-            </div>
+  <!--========== VIDEO ==========-->
+  <section class="video section bd-container" id="video">
+    <span class="section-subtitle">Reseñas</span>
+    <h2 class="section-title">Lo que nuestros usuarios dicen de nosotros !!</h2>
+    <div class="reviews-slider">
+      <div class="container">
+        <div class="card-wrapper">
+          <div class="card">
+            <mat-card *ngIf="reviews.length > 0">
+              <mat-card-header>
+                <img mat-card-avatar [src]="reviews[currentReviewIndex].image" alt="">
+                <mat-card-title>{{ reviews[currentReviewIndex].user }}</mat-card-title>
+                <mat-card-subtitle>{{ reviews[currentReviewIndex].date }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="review" align="justify">{{ reviews[currentReviewIndex].text }}</p>
+                <div class="ratings">
+                  <mat-icon *ngFor="let star of reviews[currentReviewIndex].stars">star</mat-icon>
+                </div>
+              </mat-card-content>
+            </mat-card>
           </div>
+          <button mat-icon-button color="primary" (click)="prevReview()" class="prev-review-button">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="nextReview()" class="next-review-button">
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
         </div>
-        
       </div>
-      <br>
-      <br>
-    </section>
-</div>
+    </div>
+  </section>
+
+  <!--Sección FAQ-->
+  <section class="app section bd-container faq" id="app">
+    <span class="section-subtitle">Preguntas frecuentes</span>
+    <h2 class="section-title">Preguntas más comunes</h2>
+    <div class="faq-content">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let item of faq">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.question }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="answer">{{ item.answer }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+</main>
+
+
