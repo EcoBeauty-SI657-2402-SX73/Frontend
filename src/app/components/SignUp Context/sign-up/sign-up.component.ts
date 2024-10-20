@@ -40,6 +40,7 @@ interface SignUpForm {
   ],
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
   providers: [],
 })
 export default class SignUpComponent {
