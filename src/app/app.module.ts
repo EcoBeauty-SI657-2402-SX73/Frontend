@@ -44,9 +44,6 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
-import { RecipesComponent } from './components/Recipes/recipes/recipes.component';
-import { AddRecipesComponent } from './components/Recipes/add-recipes/add-recipes.component';
-import { RecipeDetailComponent } from './components/Recipes/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -59,10 +56,7 @@ import { RecipeDetailComponent } from './components/Recipes/recipe-detail/recipe
     AddCourseComponent,
     PaymentComponent,
     CreatepostComponent,
-    ProfileComponent,
-    RecipesComponent,
-    AddRecipesComponent,
-    RecipeDetailComponent,
+    ProfileComponent
 
   ],
   imports: [
