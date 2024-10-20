@@ -32,6 +32,7 @@ interface LogInForm {
   ],
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
+  styleUrls: ['./log-in.component.scss'],
   providers: [],
 })
 export default class LogInComponent {

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'greengrow';
+  title = 'ecobeauty';
 
   constructor(private router: Router  ) { }
 
