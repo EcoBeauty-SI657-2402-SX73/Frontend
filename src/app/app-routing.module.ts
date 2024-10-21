@@ -24,10 +24,10 @@ const routes: Routes = [
   { path: 'createpost', component: CreatepostComponent },
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: '**', redirectTo: 'login' },
   { path: 'recipes', component: RecipesComponent},
   { path: 'recipe-detail/:id', component: RecipeDetailComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: '**', redirectTo: 'login' },
 
 
 ];
