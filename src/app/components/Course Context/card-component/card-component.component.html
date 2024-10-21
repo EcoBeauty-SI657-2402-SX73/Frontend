@@ -1,0 +1,52 @@
+<mat-card *ngFor="let element of firstCards">
+    <mat-card-header>
+        <mat-card-title>{{element.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="element.image" alt="pic-description">
+    <mat-card-content>
+        <p>Card description</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Suscribe</button>
+        <button mat-button>Add to favorites</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        <p>Fragances</p>
+    </mat-card-footer>
+</mat-card>
+
+
+<mat-card class="card-container" *ngFor="let element of secondCards">
+    <mat-card-header>
+        <mat-card-title>{{element.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="element.image" alt="pic-description">
+    <mat-card-content>
+        <p>Card description</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Suscribe</button>
+        <button mat-button>Add to favorites</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        <p>Fragances</p>
+    </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-container" *ngFor="let element of newCourses">
+    <mat-card-header>
+        <mat-card-title>{{element.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="element.image" alt="pic-description">
+    <mat-card-content>
+        <p>{{element.description}}</p>
+        <p>{{element.price}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Suscribe</button>
+        <button mat-button>Add to favorites</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        <p>Fragances</p>
+    </mat-card-footer>
+</mat-card>

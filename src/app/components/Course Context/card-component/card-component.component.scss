@@ -1,0 +1,17 @@
+:root{
+    --card-width: 250px;
+    --card-height: (var(--card-width) / (16/9));
+    --duration: 450ms;
+}
+
+.container{
+    position: relative;
+    display: inline-block;
+    width: var(--card-width);
+    height: var(--card-height);
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--duration);
+    transform-origin: center left;
+}
