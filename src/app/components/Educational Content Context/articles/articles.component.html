@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="lista-izquierda">
+    <mat-list>
+      <mat-list-item id="fecha">{{ articleInit.fecha }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item id="fecha">Today</mat-list-item>
+      <mat-divider></mat-divider>
+      <ng-container *ngFor="let article of articles; let i = index">
+        <a href="{{ article.enlace }}" target="_blank">
+          <mat-list-item class="articlesx">
+            {{ article.titulo }}
+          </mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>
+
+
+  <div class="centered">
+    <div class="tendencia-card">
+      <h3>#InTrend</h3>
+    </div>
+
+    <div class="card" *ngIf="!loading">
+      <a href="{{ articleInit.enlace }}" target="_blank">
+        <img [src]="articleInit.imagen" alt="{{ articleInit.titulo }}" />
+        <h2>{{ articleInit.titulo }}</h2>
+        <div class="date">{{ articleInit.fecha }}</div>
+        <p>{{ articleInit.descripcion }}</p>
+      </a>
+    </div>
+
+    <div class="card-container">
+      <div class="card1" *ngFor="let article of articles.slice(1); let i = index">
+        <a href="{{ article.enlace }}" target="_blank">
+          <img [src]="article.imagen" alt="{{ article.titulo }}" />
+          <h2>{{ article.titulo }}</h2>
+          <div class="date">{{ article.fecha }}</div>
+          <p>{{ article.descripcion }}</p>
+        </a>
+      </div>
+
+    </div>
+    <div class="card2">
+      <a href="https://www.agrisolucion.com/distribuidor/ver/greenhow/">
+        <h5>Publicidad</h5>
+        <img src="https://i.imgur.com/9lYfaD3.png" alt="Título de la imagen" />
+      </a>
+    </div>
+
+
+  </div>
+
+  <div class="container02">
+    <div class="card6">
+      <a href="https://www.agrisolucion.com/distribuidor/ver/greenhow/">
+        <h5>Advertising</h5>
+        <img src="https://i.imgur.com/O6WYNkN.png" alt="Título de la imagen" />
+      </a>
+      <!-- Repite el bloque de publicidad según sea necesario -->
+    </div>
+    <div class="card6">
+      <a href="https://www.agrisolucion.com/distribuidor/ver/greenhow/">
+        <h5>Advertising</h5>
+        <img src="https://i.imgur.com/O6WYNkN.png" alt="Título de la imagen" />
+      </a>
+      <!-- Repite el bloque de publicidad según sea necesario -->
+    </div>
+    <div class="card6">
+      <a href="https://www.agrisolucion.com/distribuidor/ver/greenhow/">
+        <h5>Advertising</h5>
+        <img src="https://i.imgur.com/O6WYNkN.png" alt="Título de la imagen" />
+      </a>
+      <!-- Repite el bloque de publicidad según sea necesario -->
+    </div>
+  </div>
+
+</div>

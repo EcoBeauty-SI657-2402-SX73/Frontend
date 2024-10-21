@@ -1,0 +1,18 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar, .footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.navbar {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+}
