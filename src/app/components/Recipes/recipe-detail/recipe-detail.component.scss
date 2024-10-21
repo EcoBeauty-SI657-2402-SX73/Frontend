@@ -1,21 +1,37 @@
-/* src/app/components/Recipes/recipe-detail/recipe-detail.component.scss */
+
 .container {
   padding: 20px;
-  margin-top: 60px; /* Adjust this value as needed to create space below the navbar */
-  margin-bottom: 60px; /* Adjust this value as needed to create space above the footer */
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-size: 1rem;
 }
 
-/* Media queries for responsiveness */
+li {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+.steps_title {
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3rem;
+}
+
+
 @media (min-width: 600px) {
   .container {
     padding: 30px;
