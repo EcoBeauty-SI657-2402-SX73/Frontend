@@ -40,7 +40,7 @@ import { PaymentComponent } from './components/Shared/payment/payment.component'
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
 
 import { ProfileComponent } from './components/Shared/profile/profile.component';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
