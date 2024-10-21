@@ -13,13 +13,29 @@ import { CourseModel, CourseResponse } from 'src/app/core/models/course.model';
 })    
 export class CardComponentComponent implements OnInit{
 
-  firstCards: CourseResponse[] = firstCourse;
-  secondCards: CourseResponse[] = secondCourse;
-  newCourses: CourseResponse[] = courses;
+  firstCards: CourseResponse[] = [];
+  secondCards: CourseResponse[] = [];
+  newCourses: CourseResponse[] = [];
 
   constructor(){}
 
 
-  ngOnInit(): void {}
+  getFirstCourses() {
+    this.firstCards = firstCourse;
+  }
+
+  getSecondCourse(){
+    this.secondCards = secondCourse;
+  }
+
+  getNewCourses(){
+    this.newCourses = courses;
+  }
+
+  ngOnInit(): void {
+    this.getFirstCourses();
+    this.getSecondCourse();
+    this.getNewCourses();
+  }
 
 }
