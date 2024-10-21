@@ -4,7 +4,7 @@ export const firstCourse = [
         "name": "Hydroponics Basics",
         "description": "Learn the fundamentals of hydroponic gardening for beginners.",
         "price": 80,
-        "image": "https://images.pexels.com/photos/1906825/pexels-photo-1906825.jpeg",
+        "image": "https://www.agrowtronics.com/wp-content/uploads/2020/05/agriculture-basil-bunch-cultivation-348689-scaled-1200x400.jpg",
         "creator": "Green Thumb Academy"
     },
     {
@@ -12,7 +12,7 @@ export const firstCourse = [
         "name": "DIY Hydroponic Systems",
         "description": "Build your own hydroponic system with easy-to-follow instructions.",
         "price": 120,
-        "image": "https://images.pexels.com/photos/1279336/pexels-photo-1279336.jpeg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtzWxJLXp7JImOsMmrC-5B0q9M6o4cU5zFsQ&s",
         "creator": "Home Hydroponics Workshop"
     },
     {
@@ -20,7 +20,7 @@ export const firstCourse = [
         "name": "Nutrient Solutions for Hydroponics",
         "description": "Discover the best nutrient solutions for optimal plant growth.",
         "price": 90,
-        "image": "https://images.pexels.com/photos/1176851/pexels-photo-1176851.jpeg",
+        "image": "https://www.nosoilsolutions.com/wp-content/uploads/2014/10/FullSizeRender3-e1428188418313.jpg",
         "creator": "Hydroponic Experts"
     },
     {
@@ -28,7 +28,7 @@ export const firstCourse = [
         "name": "Herb Gardening Hydroponically",
         "description": "Grow fresh herbs at home using hydroponic methods.",
         "price": 75,
-        "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
+        "image": "https://www.allthatgrows.in/cdn/shop/articles/Feat-Hydroponic_Veg_1024x1024.jpg?v=1644821646",
         "creator": "Urban Herb Gardeners"
     },
     {
@@ -36,7 +36,7 @@ export const firstCourse = [
         "name": "Vegetable Production in Hydroponics",
         "description": "Maximize your vegetable yield with hydroponic techniques.",
         "price": 110,
-        "image": "https://images.pexels.com/photos/1742917/pexels-photo-1742917.jpeg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLRzZn5ahNBr7T-K8ddjXx1JJ-dk_MFxteEA&s",
         "creator": "Harvest Hydroponics"
     },
     {
@@ -44,7 +44,7 @@ export const firstCourse = [
         "name": "Indoor Hydroponic Systems",
         "description": "Set up and maintain an indoor hydroponic garden.",
         "price": 130,
-        "image": "https://images.pexels.com/photos/1592001/pexels-photo-1592001.jpeg",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-j5o1ybVrOpJ_G1O6I9SR8VWdKd-8ouloeQ&s",
         "creator": "Indoor Gardening Institute"
     },
     {
@@ -52,7 +52,7 @@ export const firstCourse = [
         "name": "Hydroponics for Small Spaces",
         "description": "Learn how to grow plants in small spaces using hydroponics.",
         "price": 70,
-        "image": "https://images.pexels.com/photos/4171777/pexels-photo-4171777.jpeg",
+        "image": "https://www.environmentbuddy.com/wp-content/uploads/2022/05/hydroponics-gardens.jpg",
         "creator": "Compact Gardening Solutions"
     },
     {
