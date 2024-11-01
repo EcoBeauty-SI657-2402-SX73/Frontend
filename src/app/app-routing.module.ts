@@ -13,6 +13,7 @@ import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-d
 
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
+import {ChangePasswordComponent} from "./components/Shared/change-password/change-password.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent},
   { path: 'recipes', component: RecipesComponent},
   { path: 'recipe-detail/:id', component: RecipeDetailComponent},
+  { path: 'change-password', component: ChangePasswordComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 

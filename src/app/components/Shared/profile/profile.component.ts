@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { User } from 'firebase/auth';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ import { User } from 'firebase/auth';
 export class ProfileComponent implements OnInit {
   user: User | null = null;
   userPhotoURL: string | null = 'https://i.imgur.com/eJtTmKu.png'; // Definir una URL por defecto
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -57,6 +58,12 @@ export class ProfileComponent implements OnInit {
         console.error('Error al cerrar sesión:', error);
       });
   }
+
+  changePassword() {
+    this.router.navigate(['/change-password']);
+  }
+
+
 
   /*uploadProfileImage(event: Event) {
     const inputElement = event.target as HTMLInputElement;
