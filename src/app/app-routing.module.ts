@@ -8,6 +8,8 @@ import { ArticlesComponent } from './components/Educational Content Context/arti
 import { ComunnityComponent } from './components/Community Context/comunnity/comunnity.component';
 import { PaymentComponent } from './components/Shared/payment/payment.component';
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
+import { RecipesComponent} from "./components/Recipes/recipes/recipes.component";
+import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
 
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'createpost', component: CreatepostComponent },
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
+  { path: 'recipes', component: RecipesComponent},
+  { path: 'recipe-detail/:id', component: RecipeDetailComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 

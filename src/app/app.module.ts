@@ -40,10 +40,13 @@ import { PaymentComponent } from './components/Shared/payment/payment.component'
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
 
 import { ProfileComponent } from './components/Shared/profile/profile.component';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
+import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
+import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
+import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import {AuthService} from "./core/services/auth.service";
     AddCourseComponent,
     PaymentComponent,
     CreatepostComponent,
-    ProfileComponent
+    ProfileComponent,
+    RecipesComponent,
+    AddRecipesComponent,
+    RecipeDetailComponent
 
   ],
   imports: [
@@ -88,7 +94,8 @@ import {AuthService} from "./core/services/auth.service";
     MatDatepickerModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgOptimizedImage
 
 
   ],
