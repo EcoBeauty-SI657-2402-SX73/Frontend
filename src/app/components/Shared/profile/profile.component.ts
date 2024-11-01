@@ -13,6 +13,30 @@ export class ProfileComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+
+    this.user = {
+      displayName: 'John Doe',
+      photoURL: 'https://example.com/photo.jpg',
+      email: 'john.doe@example.com',
+      emailVerified: true,
+      isAnonymous: false,
+      metadata: {
+        creationTime: '2023-01-01T00:00:00Z',
+        lastSignInTime: '2023-01-01T00:00:00Z'
+      },
+      providerData: [],
+      refreshToken: '',
+      tenantId: null,
+      uid: '1234567890',
+      delete: () => Promise.resolve(),
+      getIdToken: (forceRefresh?: boolean) => Promise.resolve(''),
+      getIdTokenResult: (forceRefresh?: boolean) => Promise.resolve({ token: '', claims: {}, expirationTime: '', issuedAtTime: '', authTime: '', signInProvider: null }),
+      reload: () => Promise.resolve(),
+      toJSON: () => ({})
+    } as unknown as User;
+
+
+    /*
     this.authService.authState$.subscribe((user) => {
       if (user) {
         this.user = user;
@@ -20,6 +44,8 @@ export class ProfileComponent implements OnInit {
 
       }
     });
+    */
+
   }
   logout() {
     this.authService.logOut()
@@ -35,10 +61,10 @@ export class ProfileComponent implements OnInit {
   /*uploadProfileImage(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const file = inputElement.files?.[0];
-  
+
     if (file) {
       // Aquí puedes implementar la lógica para guardar la imagen en tu solución de almacenamiento (Firebase Storage, servidor, etc.)
-      
+
       // Por ahora, simplemente la mostramos en la vista
       const reader = new FileReader();
       reader.onload = () => {
@@ -47,5 +73,5 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }*/
-  
+
 }
