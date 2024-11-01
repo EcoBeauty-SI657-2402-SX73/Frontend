@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'articles', component: ArticlesComponent },
-  { path: 'comunnity', component: ComunnityComponent },
+  { path: 'community', component: ComunnityComponent },
   { path: 'createpost', component: CreatepostComponent },
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
