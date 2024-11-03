@@ -44,6 +44,7 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
+import { PostsDetailComponent } from './components/Community Context/posts-detail/posts-detail.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {AuthService} from "./core/services/auth.service";
     AddCourseComponent,
     PaymentComponent,
     CreatepostComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostsDetailComponent
 
   ],
   imports: [
