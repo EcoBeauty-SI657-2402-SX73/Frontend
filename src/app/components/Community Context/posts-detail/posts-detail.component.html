@@ -1,0 +1,24 @@
+<div *ngIf="post">
+  <h1>{{ post.title }}</h1>
+  <img [src]="post.image" alt="Imagen del Post" />
+  <p>{{ post.description }}</p>
+  <p>{{ post.author }}</p>
+  <p>{{ post.date }}</p>
+  <div class="comments-section">
+    <h2>Comments</h2>
+    <form (ngSubmit)="addComment()">
+      <textarea [(ngModel)]="newComment" name="comment" placeholder="Add a comment..." required></textarea>
+      <button type="submit">Comentar</button>
+    </form>
+    <div *ngFor="let comment of post.comments">
+      <div class="comment">
+        <div class="comment-header">
+          <mat-icon>person</mat-icon>
+          <span class="comment-author">{{ comment.author }}</span>
+          <span class="comment-date">{{ comment.date }}</span>
+        </div>
+        <p>{{ comment.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>

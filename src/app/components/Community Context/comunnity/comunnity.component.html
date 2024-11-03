@@ -44,7 +44,7 @@
 
     <!--Sección datos falsos-->
     <div class="posts">
-          <div *ngFor="let post of postsFalse">
+          <div *ngFor="let post of postsFalse" (click)="viewPostDetail(post.id)">
             <div class="post-header">
               <h3>Agricultural events and fairs</h3>
             </div>

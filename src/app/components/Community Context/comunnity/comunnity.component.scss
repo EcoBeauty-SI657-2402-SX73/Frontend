@@ -231,3 +231,9 @@ comunidad-component {
   color: gray;
   margin-top: 10px;
 }
+
+.posts {
+  .post {
+    cursor: pointer; /* Cambia la forma del cursor cuando se coloca sobre un post */
+  }
+}
