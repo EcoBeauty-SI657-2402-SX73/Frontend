@@ -9,6 +9,7 @@ h1 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 img {
@@ -16,6 +17,17 @@ img {
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #999;
 }
 
 p {
