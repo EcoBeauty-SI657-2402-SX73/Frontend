@@ -28,9 +28,10 @@
     <span>EcoBeauty</span>
     <div class="spacer"></div>
     <a mat-button routerLink="/home">HOME</a>
+    <a mat-button routerLink="/recipes">RECIPES</a>
     <a mat-button routerLink="/articles">ARTICLES</a>
     <a mat-button routerLink="/courses">COURSES</a>
-    <a mat-button routerLink="/comunnity">COMMUNITY</a>
+    <a mat-button routerLink="/community">COMMUNITY</a>
     <ng-container *ngIf="user; else loginButton">
       <a mat-button (click)="navigateToProfile()">MY ACCOUNT</a>
     </ng-container>

@@ -35,7 +35,7 @@ export class CreatepostComponent {
     this.dbService.createPost(this.newPost).subscribe(
       () => {
         this.toastr.success('Post creado exitosamente', 'Éxito');
-        this.redirectAfterDelay('/comunnity', 3000); // Redirigir a la vista de comunidad después de 3 segundos
+        this.redirectAfterDelay('/community', 3000); // Redirigir a la vista de comunidad después de 3 segundos
       },
       (error) => {
         this.toastr.error('Error al crear el post', 'Error');

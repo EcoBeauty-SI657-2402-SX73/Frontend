@@ -8,9 +8,13 @@ import { ArticlesComponent } from './components/Educational Content Context/arti
 import { ComunnityComponent } from './components/Community Context/comunnity/comunnity.component';
 import { PaymentComponent } from './components/Shared/payment/payment.component';
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
+import { RecipesComponent} from "./components/Recipes/recipes/recipes.component";
+import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
 
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
+import {RickAndMortyComponent} from "./components/rick-and-morty/rick-and-morty/rick-and-morty.component";
+import { AddRecipesComponent } from './components/Recipes/add-recipes/add-recipes.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -18,10 +22,14 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'articles', component: ArticlesComponent },
-  { path: 'comunnity', component: ComunnityComponent },
+  { path: 'community', component: ComunnityComponent },
   { path: 'createpost', component: CreatepostComponent },
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
+  { path: 'recipes', component: RecipesComponent},
+  { path: 'createrecipe', component: AddRecipesComponent},
+  { path: 'recipe-detail/:id', component: RecipeDetailComponent},
+  { path: 'rick', component: RickAndMortyComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 

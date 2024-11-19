@@ -4,42 +4,13 @@
   display: flex;
   flex-wrap: wrap;
 }
-.articlesx:hover{
 
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
-  
-
-
+.articlesx:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
 }
 
-@media screen and (max-width: 767px) {
-  .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .lista-izquierda {
-    display: none;
-  }
-  .card6{
-    display: none;
-  }
-
-
-  .centered {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-  
-}
 .lista-izquierda {
   width: 18%;
   max-width: 100%;
@@ -51,11 +22,11 @@
   max-height: 100%;
   margin-left: 3vw;
   margin-right: 3vw;
-  
 }
-#fecha{
+
+#fecha {
   text-align: center;
-  background-color:#C2EFD4;
+  background-color: #C2EFD4;
 }
 
 .centered {
@@ -66,16 +37,11 @@
   margin-right: 3vw;
   display: flex;
   flex-direction: column;
-  //align-items: center;
   justify-content: center;
   height: auto;
 }
 
-
-
-
 .card {
-  //text-align: center;
   padding: 1px;
   border: 2px solid #ccc;
   background-color: #f9f9f9;
@@ -86,49 +52,51 @@
   max-height: 100%;
   margin-top: 10px;
 }
-.card h2{
+
+.card h2 {
   text-align: center;
   padding-left: 2%;
-  padding-right: 2%; 
+  padding-right: 2%;
   font-size: 1.5rem;
   margin-top: 10px;
   color: #0e9b47;
 }
-.card p{
+
+.card p {
   color: #000000;
   padding-left: 2%;
   padding-right: 2%;
-  padding-bottom: 2%; 
+  padding-bottom: 2%;
   font-size: 1rem;
   margin-top: 15px;
   margin-bottom: 1%;
-  color: #000000;
 }
 
 .card img {
   width: 100%;
   height: auto;
 }
+
 .card .date {
   text-align: center;
   padding: 5px;
   font-size: 1rem;
   color: #0e9b47;
-  margin: 0; /* Eliminar márgenes por defecto */
+  margin: 0;
 }
-.card:hover{
+
+.card:hover {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
-
 }
 
-.card6:hover{
+.card6:hover {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
-
 }
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -149,8 +117,8 @@
 
 .card1 img {
   width: 100%;
-  height: 200px; /* Establecer una altura fija para las imágenes */
-  object-fit: cover; /* Asegurar que las imágenes mantengan su proporción mientras se recortan para llenar el espacio */
+  height: 200px;
+  object-fit: cover;
 }
 
 .card1 h2 {
@@ -158,7 +126,7 @@
   padding: 10px;
   font-size: 1.5rem;
   color: #0e9b47;
-  margin: 0; /* Eliminar márgenes por defecto */
+  margin: 0;
 }
 
 .card1 .date {
@@ -166,29 +134,28 @@
   padding: 5px;
   font-size: 1rem;
   color: #0e9b47;
-  margin: 0; /* Eliminar márgenes por defecto */
+  margin: 0;
 }
 
 .card1 p {
   padding: 10px;
   font-size: 1rem;
   color: #333;
-  margin: 10px 0 0 0; /* Ajustar el margen para encajar mejor */
-  text-align: justify; /* Justificar el texto para mejor alineación */
-  max-height: 100px; /* Limitar la altura máxima del texto */
-  overflow: hidden; /* Ocultar cualquier desbordamiento de texto */
-  text-overflow: ellipsis; /* Añadir elipsis para el texto que desborda */
+  margin: 10px 0 0 0;
+  text-align: justify;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 
 .card1:hover {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
 }
 
--------------------------------------------------
 .tendencia-card {
   background-color: transparent;
+  margin: 20px 0;
   border: none;
   text-align: left;
   display: flex;
@@ -196,9 +163,9 @@
 }
 
 .tendencia-card h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .card,
@@ -212,7 +179,7 @@
   margin-bottom: 20px;
 }
 
-.card img{
+.card img {
   width: 100%;
   height: auto;
 }
@@ -228,7 +195,7 @@
   padding-bottom: 2%;
   width: auto;
   max-width: 100%;
-  height:auto;
+  height: auto;
   max-height: 100%;
   margin-top: 7%;
   margin-bottom: 10%;
@@ -237,18 +204,17 @@
   background-color: #f9f9f9;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
-.card2 img{
+
+.card2 img {
   margin-left: 2%;
   margin-right: 2%;
   width: 100%;
   max-width: 100%;
-  height:auto;
+  height: auto;
   max-height: 100%;
 }
 
-
-.container02{
-  
+.container02 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,6 +224,7 @@
   max-width: 100%;
   margin-top: 7%;
 }
+
 .card6 {
   text-align: left;
   width: auto;
@@ -271,12 +238,13 @@
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 12%;
-  
 }
-.card6 h5{
+
+.card6 h5 {
   padding-top: 1.5%;
   padding-left: 3%;
 }
+
 .card6 img {
   padding-left: 2.5%;
   padding-right: 2%;
@@ -284,36 +252,91 @@
   height: 95%;
   max-height: auto;
   max-width: auto;
- 
 }
-
-/*.card6 h5 {
-  font-size: 0.1rem;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-bottom: 2px;
-}
-*/
 
 .card a:visited {
-  color: #f9f9f9
+  color: #f9f9f9;
 }
+
 .card1 a:visited {
-  color: #f9f9f9
+  color: #f9f9f9;
 }
+
 .card6 a:visited {
-  color: green
+  color: green;
 }
+
 .card2 a:visited {
-  color: green
+  color: green;
 }
+
 .lista-izquierda a:visited {
-  color: #f9f9f9
+  color: #f9f9f9;
 }
-.card2 :hover{
-  
+
+.card2:hover {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
-  
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .lista-izquierda, .centered, .container02 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .card, .card2, .card6 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card h2, .card p, .card2 h5 {
+    margin-left: 0;
+  }
+
+  .tendencia-card h3 {
+    text-align: center;
+  }
+
+  .lista-izquierda {
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .tendencia-card {
+    margin-left: 50px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card p, .card1 p {
+    font-size: 0.9rem;
+  }
+
+  .card1 h2 {
+    font-size: 1.2rem;
+  }
+
+  .tendencia-card h3 {
+    font-size: 1.5rem;
+  }
 }
