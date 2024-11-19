@@ -40,11 +40,17 @@ import { PaymentComponent } from './components/Shared/payment/payment.component'
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
 
 import { ProfileComponent } from './components/Shared/profile/profile.component';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
 import { PostsDetailComponent } from './components/Community Context/posts-detail/posts-detail.component';
+import { CardComponentComponent } from './components/Course Context/card-component/card-component.component';
+import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
+import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
+import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
+import { ChangePasswordComponent } from './components/Shared/change-password/change-password.component';
+import {CacheInterceptor} from "./core/services/cache.interceptor";
 
 @NgModule({
   declarations: [
@@ -59,6 +65,10 @@ import { PostsDetailComponent } from './components/Community Context/posts-detai
     CreatepostComponent,
     ProfileComponent,
     PostsDetailComponent
+    RecipesComponent,
+    AddRecipesComponent,
+    RecipeDetailComponent,
+    ChangePasswordComponent
 
   ],
   imports: [
@@ -90,13 +100,15 @@ import { PostsDetailComponent } from './components/Community Context/posts-detai
     MatDatepickerModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    CardComponentComponent,
+    NgOptimizedImage
 
   ],
   providers: [
     AuthService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

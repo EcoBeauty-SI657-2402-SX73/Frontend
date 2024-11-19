@@ -8,10 +8,14 @@ import { ArticlesComponent } from './components/Educational Content Context/arti
 import { ComunnityComponent } from './components/Community Context/comunnity/comunnity.component';
 import { PaymentComponent } from './components/Shared/payment/payment.component';
 import { CreatepostComponent } from './components/CreatePost/createpost/createpost.component';
+import { RecipesComponent} from "./components/Recipes/recipes/recipes.component";
+import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
 
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
 import {PostsDetailComponent} from "./components/Community Context/posts-detail/posts-detail.component";
+import {ChangePasswordComponent} from "./components/Shared/change-password/change-password.component";
+import { AddRecipesComponent } from './components/Recipes/add-recipes/add-recipes.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -24,6 +28,10 @@ const routes: Routes = [
   { path: 'createpost', component: CreatepostComponent },
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
+  { path: 'recipes', component: RecipesComponent},
+  { path: 'createrecipe', component: AddRecipesComponent},
+  { path: 'recipe-detail/:id', component: RecipeDetailComponent},
+  { path: 'change-password', component: ChangePasswordComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 
