@@ -44,6 +44,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
+import { CardComponentComponent } from './components/Course Context/card-component/card-component.component';
 import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
 import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
 import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
@@ -96,8 +97,8 @@ import {CacheInterceptor} from "./core/services/cache.interceptor";
     ReactiveFormsModule,
     FormsModule,
     MatSnackBarModule,
+    CardComponentComponent,
     NgOptimizedImage
-
 
   ],
   providers: [

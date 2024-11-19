@@ -4,9 +4,18 @@ export interface CourseModel {
     image: any;
     description: any;
     price: any;
+    creator: any;
+    category: any;
+    date: any;
     rating: any;
     duration: any;
-    category: any;
-    date:any;
+}
 
+export interface CourseResponse{
+    id: any;
+    name: any;
+    image: any;
+    description: any;
+    price: any;
+    creator: any;
 }
