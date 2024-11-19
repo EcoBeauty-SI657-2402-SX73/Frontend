@@ -64,7 +64,7 @@ import {CacheInterceptor} from "./core/services/cache.interceptor";
     PaymentComponent,
     CreatepostComponent,
     ProfileComponent,
-    PostsDetailComponent
+    PostsDetailComponent,
     RecipesComponent,
     AddRecipesComponent,
     RecipeDetailComponent,
