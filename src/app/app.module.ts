@@ -48,6 +48,7 @@ import { CardComponentComponent } from './components/Course Context/card-compone
 import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
 import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
 import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
+import { ChangePasswordComponent } from './components/Shared/change-password/change-password.component';
 import {CacheInterceptor} from "./core/services/cache.interceptor";
 
 @NgModule({
@@ -64,7 +65,8 @@ import {CacheInterceptor} from "./core/services/cache.interceptor";
     ProfileComponent,
     RecipesComponent,
     AddRecipesComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    ChangePasswordComponent
 
   ],
   imports: [
