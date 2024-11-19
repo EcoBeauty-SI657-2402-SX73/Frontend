@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { RecipesService} from "../../../core/services/recipes.service";
+import { Component, ViewChild } from '@angular/core';
+import { RecipesService } from "../../../core/services/recipes.service";
 import { RecipeModel } from 'src/app/core/models/recipe.model';
 import { NgForm } from '@angular/forms';
-import { DialogRef } from '@angular/cdk/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-recipes',
@@ -18,28 +17,31 @@ export class AddRecipesComponent {
   constructor(
     private recipesService: RecipesService,
     private snackBar: MatSnackBar,
-    private dialogRef: DialogRef<AddRecipesComponent>,
-    private dialog: MatDialog
+    private router: Router
   ) {}
 
   addRecipe() {
-    console.log('Data being sent:', this.recipeData);
+    if (this.recipeForm.valid) {
+      console.log('Data being sent:', this.recipeData);
 
-    this.recipesService.createRecipe(this.recipeData).subscribe(
-      (data: any) => {
-        this.openSnackBar('Recipe created', 'Close');
-        console.log(data);
-        this.dialogRef.close();
-      },
-      (error) => {
-        this.openSnackBar(`Error: ${error.message}`, 'Close', 'error-snackbar');
-        console.error(error);
-      }
-    );
+      this.recipesService.createRecipe(this.recipeData).subscribe(
+        (data: any) => {
+          this.openSnackBar('Recipe created', 'Close');
+          console.log(data);
+          this.redirectAfterDelay('/reccipes', 3000);
+        },
+        (error) => {
+          this.openSnackBar(`Error: ${error.message}`, 'Close', 'error-snackbar');
+          console.error(error);
+        }
+      );
+    } else {
+      this.openSnackBar('Please fill out the form correctly.', 'Close', 'error-snackbar');
+    }
   }
 
   cancel() {
-    this.dialog.closeAll();
+    this.redirectAfterDelay('/recipes', 1000);
   }
 
   private openSnackBar(
@@ -51,5 +53,11 @@ export class AddRecipesComponent {
       duration: 3000,
       panelClass: panelClass,
     });
+  }
+
+  redirectAfterDelay(url: string, delay: number) {
+    setTimeout(() => {
+      this.router.navigate([url]);
+    }, delay);
   }
 }

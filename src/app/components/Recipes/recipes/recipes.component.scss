@@ -36,16 +36,17 @@
   transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta al hacer hover */
 }
 
-@media (max-width: 600px) {
-  .title {
-    font-size: 20px;
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .add-recipe-button {
-    font-size: 14px;
+    margin-top: 10px;
   }
 
   .card-container {
-    grid-template-columns: 1fr;
+    gap: 20px; /* Reduce el espacio entre las tarjetas en modo responsive */
   }
 }

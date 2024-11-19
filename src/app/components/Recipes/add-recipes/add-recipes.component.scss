@@ -1,117 +1,54 @@
-/* src/app/components/Recipes/add-recipes/add-recipes.component.scss */
-
-/* Establece un tamaño de fuente base para el documento */
-html {
-  font-size: 16px;
-}
-
-/* Ajusta el tamaño de fuente de h1 y h2 para una mejor legibilidad en móviles */
-h1, h2 {
-  font-size: 2rem;
-}
-
-/* Hace que las imágenes dentro de los formularios sean totalmente responsivas */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Establece un ancho máximo y márgenes automáticos para centrar el contenido */
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2%;
-}
-
-/* Asegura que los encabezados y párrafos tengan suficiente espacio en dispositivos móviles */
-h1, h2, p {
-  margin-bottom: 1rem;
-}
-
-/* Ajusta el ancho de los campos de entrada para llenar el contenedor */
-.mat-form-field {
-  width: 100%;
-  margin-bottom: 1.5rem; /* Reduce el margen inferior para una mejor separación */
-}
-
-/* Estilo para el mat-label */
-.mat-label {
-  color: #333;
-  font-size: 16px;
-}
-
-/* Ajusta el tamaño de fuente de las ayudas en los campos de entrada */
-.mat-hint {
-  font-size: 80%;
-}
-
-/* Aumenta el tamaño de la fuente y el espacio para la descripción */
-.text-area textarea {
-  height: 100px; /* Reduce the height of the textarea */
-  font-size: 100%;
-}
-
-/* Establece un ancho máximo y centra los botones en dispositivos móviles */
-.action {
+.create-recipe {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
-/* Ajusta el tamaño de fuente de los botones */
-button {
-  width: 48%;
-  font-size: 120%;
+h2 {
+  color: #267144;
+  margin-bottom: 20px;
 }
 
-/* Añade espacio adicional en la parte inferior de los botones */
-button + button {
-  margin-top: 1rem;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Media queries for responsiveness */
-@media (min-width: 600px) {
-  .container {
-    max-width: 80%;
-  }
-
-  .action {
-    justify-content: flex-start;
-  }
-
-  button {
-    width: auto;
-    margin-right: 1rem;
-  }
-
-  button + button {
-    margin-top: 0;
-  }
+label {
+  color: #267144;
+  margin-bottom: 10px;
 }
 
-@media (min-width: 900px) {
-  .container {
-    max-width: 60%;
-  }
+input[type="text"],
+textarea {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
 
-  h1, h2 {
-    font-size: 2.5rem;
-  }
+button[type="submit"],
+button[type="button"] {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #267144;
+  color: #fff;
+  cursor: pointer;
+}
 
-  .mat-form-field {
-    width: 48%;
-  }
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #205933;
+}
 
-  .text-area textarea {
-    height: 150px;
-  }
-
-  .action {
-    justify-content: space-between;
-  }
-
-  button {
-    width: 30%;
-  }
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }

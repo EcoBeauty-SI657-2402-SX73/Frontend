@@ -1,27 +1,56 @@
 <!-- src/app/components/Recipes/add-recipes/add-recipes.component.html -->
-<div class="container">
-  <div mat-dialog-title>
-    <h1>Add Recipe</h1>
-  </div>
-  <br>
-  <form #recipeForm="ngForm">
-    <div mat-dialog-content>
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput name="name" [(ngModel)]="recipeData.name" required>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="text-area">
-        <mat-label>Description</mat-label>
-        <textarea matInput name="description" [(ngModel)]="recipeData.description" required></textarea>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="text-area">
-        <mat-label>Steps</mat-label>
-        <textarea matInput name="steps" [(ngModel)]="recipeData.steps" required></textarea>
-      </mat-form-field>
+<br />
+<br />
+<br />
+<div class="create-recipe">
+  <h2>Add Recipe</h2>
+  <form (ngSubmit)="addRecipe()" #recipeForm="ngForm">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="recipeData.name"
+      required
+    />
+    <div
+      *ngIf="
+        recipeForm.controls['name'].invalid && recipeForm.controls['name'].touched
+      "
+    >
+      <p class="error">The name is required.</p>
+    </div>
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      name="description"
+      [(ngModel)]="recipeData.description"
+      required
+    ></textarea>
+    <div
+      *ngIf="
+        recipeForm.controls['description'].invalid && recipeForm.controls['description'].touched
+      "
+    >
+      <p class="error">The description is required.</p>
+    </div>
+    <label for="steps">Steps:</label>
+    <textarea
+      id="steps"
+      name="steps"
+      [(ngModel)]="recipeData.steps"
+      required
+    ></textarea>
+    <div
+      *ngIf="
+        recipeForm.controls['steps'].invalid && recipeForm.controls['steps'].touched
+      "
+    >
+      <p class="error">The steps are required.</p>
+    </div>
+    <div class="actions">
+      <button type="button" (click)="cancel()">Cancel</button>
+      <button type="submit" (click)="addRecipe()">Save</button>
     </div>
   </form>
-  <div mat-dialog-actions class="action">
-    <button mat-button (click)="cancel()">Cancel</button>
-    <button mat-button color="primary" (click)="addRecipe()">Save</button>
-  </div>
 </div>

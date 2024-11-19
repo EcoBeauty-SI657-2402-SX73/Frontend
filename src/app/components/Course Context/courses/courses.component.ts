@@ -4,11 +4,12 @@ import { AddCourseComponent } from '../add-course/add-course.component';
 import { Router } from '@angular/router';
 import { CoursesService } from 'src/app/core/services/courses.service';
 import { CourseModel } from 'src/app/core/models/course.model';
+import { CardComponentComponent } from '../card-component/card-component.component';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 
 export class CoursesComponent implements OnInit {
