@@ -44,6 +44,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {AuthInterceptor} from "./core/services/auth.interceptor";
 import {AuthService} from "./core/services/auth.service";
+import { PostsDetailComponent } from './components/Community Context/posts-detail/posts-detail.component';
 import { CardComponentComponent } from './components/Course Context/card-component/card-component.component';
 import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
 import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
@@ -63,6 +64,7 @@ import {CacheInterceptor} from "./core/services/cache.interceptor";
     PaymentComponent,
     CreatepostComponent,
     ProfileComponent,
+    PostsDetailComponent
     RecipesComponent,
     AddRecipesComponent,
     RecipeDetailComponent,

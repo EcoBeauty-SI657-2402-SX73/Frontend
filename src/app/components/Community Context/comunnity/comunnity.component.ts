@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DbService } from 'src/app/core/services/db.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-comunnity',
@@ -122,7 +123,7 @@ export class ComunnityComponent {
 
   trends: any[] = [];
 
-  constructor(private dbService: DbService) {}
+  constructor(private dbService: DbService, private router: Router) {}
 
   ngOnInit(): void {
     this.getPosts();
@@ -139,5 +140,9 @@ export class ComunnityComponent {
     this.dbService.getTrends().subscribe((data: any[]) => {
       this.trends = data;
     });
+  }
+
+  viewPostDetail(postId: number) {
+    this.router.navigate(['/posts-detail', postId]);
   }
 }
