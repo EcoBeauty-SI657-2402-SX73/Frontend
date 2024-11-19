@@ -10,14 +10,14 @@ import {Router} from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
   user: User | null = null;
-  userPhotoURL: string | null = 'https://i.imgur.com/eJtTmKu.png'; // Definir una URL por defecto
+  userPhotoURL: string | null = 'https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small_2x/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg'; // Definir una URL por defecto
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
 
     this.user = {
       displayName: 'John Doe',
-      photoURL: 'https://example.com/photo.jpg',
+      userPhotoURL: 'https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small_2x/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg',
       email: 'john.doe@example.com',
       emailVerified: true,
       isAnonymous: false,
