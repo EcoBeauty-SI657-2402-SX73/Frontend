@@ -1,0 +1,102 @@
+
+
+<main class="l-main">
+  <!--========== HOME ==========-->
+  <section class="home" id="home">
+    <div class="home_container bd-container bd-grid">
+      <div class="home_data">
+        <h1 class="home_title">Aprende y crea tus propios productos de cosmética natural</h1>
+        <h2 class="home_subtitle">En casa 🏠</h2>
+        <button mat-raised-button color="primary">Regístrate</button>
+      </div>
+      <img src="assets/imagen_ecobeauty.png" alt="Gestion logística" class="home_img" />
+    </div>
+  </section>
+
+  <!--========== ABOUT ==========-->
+  <section class="about section bd-container" id="about">
+    <div class="about_container bd-grid">
+      <div class="about_data">
+        <span class="section-subtitle about_initial">Servicios</span>
+        <h2 class="section-title-about_initial">Encuentre la mejor forma de crear sus cosmeticos naturales!</h2>
+        <p class="about_description">
+          Crea tus propios productos de belleza y cuidado personal con ingredientes naturales y orgánicos.
+          EcoBeauty te brinda la oportunidad de aprender a crear tus propios productos de belleza y cuidado personal
+          con ingredientes naturales y orgánicos. 🌿
+        </p>
+        <button mat-raised-button color="primary">Te animas? Úsalo ahora!</button>
+      </div>
+      <img src="assets/servicio_ecobeauty.png" alt="Envasado de Lubricantes" class="about_img" />
+    </div>
+  </section>
+
+  <!--========== TEAMMATES ==========-->
+  <section class="ad section bd-container" id="ad">
+    <span class="section-subtitle">Equipo</span>
+    <h2 class="section-title">Nuestro Equipo de Desarrollo</h2>
+    <div class="ad_container bd-grid">
+      <div class="ad_content equipo" *ngFor="let member of team">
+        <mat-card>
+          <img mat-card-image [src]="member.image" alt=""/>
+          <mat-card-content>
+            <h3 class="ad_name">{{ member.name }}</h3>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!--========== VIDEO ==========-->
+  <section class="video section bd-container" id="video">
+    <span class="section-subtitle">Reseñas</span>
+    <h2 class="section-title">Lo que nuestros usuarios dicen de nosotros !!</h2>
+    <div class="reviews-slider">
+      <div class="container">
+        <div class="card-wrapper">
+          <div class="card">
+            <mat-card *ngIf="reviews.length > 0">
+              <mat-card-header>
+                <img mat-card-avatar [src]="reviews[currentReviewIndex].image" alt="">
+                <mat-card-title>{{ reviews[currentReviewIndex].user }}</mat-card-title>
+                <mat-card-subtitle>{{ reviews[currentReviewIndex].date }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p class="review" align="justify">{{ reviews[currentReviewIndex].text }}</p>
+                <div class="ratings">
+                  <mat-icon *ngFor="let star of reviews[currentReviewIndex].stars">star</mat-icon>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <button mat-icon-button color="primary" (click)="prevReview()" class="prev-review-button">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="nextReview()" class="next-review-button">
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Sección FAQ-->
+  <section class="app section bd-container faq" id="app">
+    <span class="section-subtitle">Preguntas frecuentes</span>
+    <h2 class="section-title">Preguntas más comunes</h2>
+    <div class="faq-content">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let item of faq">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.question }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="answer">{{ item.answer }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+</main>
+
+

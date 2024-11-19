@@ -1,0 +1,9 @@
+<div class="container" *ngIf="recipe">
+  <h1>{{ recipe.name }}</h1>
+  <p><strong>Description:</strong> {{ recipe.description }}</p>
+  <img [src]="recipe.image" alt="{{ recipe.name }}" class="recipe-image">
+  <p class="steps_title"><strong>Steps:</strong></p>
+  <ol>
+    <li *ngFor="let step of recipe.steps">{{ step }}</li>
+  </ol>
+</div>
