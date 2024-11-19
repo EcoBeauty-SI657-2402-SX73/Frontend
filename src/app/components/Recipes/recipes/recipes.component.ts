@@ -21,7 +21,7 @@ export class RecipesComponent implements OnInit {
   }
 
   openAddRecipe() {
-    this._dialog.open(AddRecipesComponent);
+    this.router.navigate(['/createrecipe']);
   }
 
   getAllRecipes(){
