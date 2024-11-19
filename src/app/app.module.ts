@@ -47,6 +47,7 @@ import {AuthService} from "./core/services/auth.service";
 import {RecipesComponent} from "./components/Recipes/recipes/recipes.component";
 import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.component";
 import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
+import {CacheInterceptor} from "./core/services/cache.interceptor";
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-d
   ],
   providers: [
     AuthService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

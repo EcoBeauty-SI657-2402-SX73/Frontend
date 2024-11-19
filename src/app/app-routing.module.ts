@@ -13,6 +13,8 @@ import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-d
 
 import { authGuard } from './core/guards/auth.guard';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
+import {RickAndMortyComponent} from "./components/rick-and-morty/rick-and-morty/rick-and-morty.component";
+import { AddRecipesComponent } from './components/Recipes/add-recipes/add-recipes.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
   { path: 'profile', component: ProfileComponent},
   { path: 'recipes', component: RecipesComponent},
+  { path: 'createrecipe', component: AddRecipesComponent},
   { path: 'recipe-detail/:id', component: RecipeDetailComponent},
+  { path: 'rick', component: RickAndMortyComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 
