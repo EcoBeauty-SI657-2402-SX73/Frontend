@@ -7,7 +7,7 @@ import { CourseModel } from '../models/course.model';
     providedIn: 'root'
 })
 export class CoursesService {
-  baseUrl = 'https://green-grow-421820.rj.r.appspot.com/api/green-grow/v1/courses';
+  baseUrl = 'http://localhost:8080/api/v1/courses';
   //baseUrl = 'http://localhost:8000/api/green-grow/v1/courses';
 
     constructor(private http: HttpClient) { }
@@ -31,9 +31,8 @@ export class CoursesService {
     }
 
     //GET
-    getListCourses(): Observable<CourseModel>{
-      return this.http.get<CourseModel>(this.baseUrl)
-      .pipe(retry(2),catchError(this.handleError))
+    getAllCourses(): Observable<CourseModel[]> {
+      return this.http.get<CourseModel[]>(this.baseUrl);
     }
 
     //GetById
@@ -46,5 +45,15 @@ export class CoursesService {
     createCourse(data: CourseModel): Observable<CourseModel>{
       return this.http.post<CourseModel>(this.baseUrl, data, this.httpOptions)
       .pipe(retry(2),catchError(this.handleError))
+    }
+
+    //DELETE
+    deleteCourse(id: any): Observable<CourseModel>{
+      return this.http.delete<CourseModel>(this.baseUrl + '/' + id, this.httpOptions)
+      .pipe(retry(2),catchError(this.handleError))
+    }
+
+    addLearningPathItem(courseId: string, tutorialId: string): Observable<any> {
+      return this.http.post<any>(`${this.baseUrl}/${courseId}/learning-path-items/${tutorialId}`, {});
     }
 }

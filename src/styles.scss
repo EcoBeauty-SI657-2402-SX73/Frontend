@@ -1,18 +1,31 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .navbar, .footer {
   position: fixed;
   left: 0;
   width: 100%;
+  background-color: #fff; /* Ajusta el color de fondo según sea necesario */
+  z-index: 1000; /* Asegura que el navbar y el footer estén por encima del contenido */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra para un mejor efecto visual */
 }
 
 .navbar {
   top: 0;
+  height: 60px; /* Ajusta la altura del navbar según sea necesario */
 }
 
 .footer {
   bottom: 0;
+  height: 60px; /* Ajusta la altura del footer según sea necesario */
+}
+
+.content {
+  padding-top: 60px; /* Debe ser igual a la altura del navbar */
+  padding-bottom: 60px; /* Debe ser igual a la altura del footer */
+  min-height: calc(100vh - 120px); /* Altura mínima para asegurar que el contenido no quede oculto */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y la altura */
 }

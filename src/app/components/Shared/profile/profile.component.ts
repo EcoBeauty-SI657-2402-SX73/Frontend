@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { User } from 'firebase/auth';
 import {Router} from "@angular/router";
+import { StudentsService } from 'src/app/core/services/students.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,58 +10,45 @@ import {Router} from "@angular/router";
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  user: User | null = null;
+  email: string | null = '';
+  name: string | null = '';
   userPhotoURL: string | null = 'https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small_2x/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg'; // Definir una URL por defecto
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private studentService: StudentsService) {}
 
   ngOnInit(): void {
-
-    this.user = {
-      displayName: 'John Doe',
-      userPhotoURL: 'https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small_2x/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg',
-      email: 'john.doe@example.com',
-      emailVerified: true,
-      isAnonymous: false,
-      metadata: {
-        creationTime: '2023-01-01T00:00:00Z',
-        lastSignInTime: '2023-01-01T00:00:00Z'
-      },
-      providerData: [],
-      refreshToken: '',
-      tenantId: null,
-      uid: '1234567890',
-      delete: () => Promise.resolve(),
-      getIdToken: (forceRefresh?: boolean) => Promise.resolve(''),
-      getIdTokenResult: (forceRefresh?: boolean) => Promise.resolve({ token: '', claims: {}, expirationTime: '', issuedAtTime: '', authTime: '', signInProvider: null }),
-      reload: () => Promise.resolve(),
-      toJSON: () => ({})
-    } as unknown as User;
-
-
-    /*
-    this.authService.authState$.subscribe((user) => {
-      if (user) {
-        this.user = user;
-        this.userPhotoURL = user.photoURL; // Obtener la URL de la imagen
-
-      }
-    });
-    */
-
+    this.email = localStorage.getItem('userEmail');
+    console.log('Email from localStorage:', this.email); // Agrega un mensaje de depuración
+    if (this.email) {
+      this.studentService.getAllProfiles().subscribe(
+        (profiles) => {
+          console.log('Profiles fetched:', profiles); // Agrega un mensaje de depuración
+          const profile = profiles.find(p => p.email === this.email);
+          if (profile) {
+            this.name = profile.fullName;
+            console.log('Full name:', this.name);
+            console.log('Email:', this.email);
+          } else {
+            console.log('Profile not found for email:', this.email); // Agrega un mensaje de depuración
+          }
+        },
+        (error) => {
+          console.error('Error fetching profiles', error);
+        }
+      );
+    }
   }
   logout() {
-    this.authService.logOut()
-      .then(() => {
-        console.log('Sesión cerrada');
-        return window.location.reload();
-      })
-      .catch((error) => {
-        console.error('Error al cerrar sesión:', error);
-      });
+    this.authService.logOut();
+    console.log('Sesión cerrada');
+    this.router.navigate(['/login']);
   }
 
   changePassword() {
     this.router.navigate(['/change-password']);
+  }
+
+  viewEnrollments() {
+    this.router.navigate(['/enrollments']);
   }
 
 

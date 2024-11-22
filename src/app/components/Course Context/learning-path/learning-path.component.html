@@ -1,0 +1,35 @@
+<div class="content">
+    <h2>{{ course?.title }} - Learning Path</h2>
+    <div *ngIf="!course">
+      <p>Loading course details...</p>
+    </div>
+    <div *ngIf="course">
+      <div class="course-details">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+      </div>
+      <div class="learning-path-container">
+        <h3>Recetas</h3>
+        <div class="recipes-grid">
+          <div *ngFor="let recipe of recipes" class="recipe-card">
+            <img [src]="recipe.image" alt="{{ recipe.name }}">
+            <div class="recipe-info">
+              <h4>{{ recipe.name }}</h4>
+              <button mat-raised-button color="primary" [routerLink]="['/recipe-detail', recipe.id]" [queryParams]="{ courseId: course.id }">View Details</button>
+            </div>
+          </div>
+        </div>
+        <h3>Tutoriales</h3>
+        <div class="tutorials-grid">
+          <div *ngFor="let tutorial of tutorials" class="tutorial-card">
+            <img [src]="tutorial.imageUrl" alt="Tutorial Image">
+            <div class="tutorial-info">
+              <h4>{{ tutorial.name }}</h4>
+              <p>{{ tutorial.description }}</p>
+              <button mat-raised-button color="primary" [routerLink]="['/tutorial-detail', tutorial.id]" [queryParams]="{ courseId: course.id }">View Tutorial</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,38 +8,8 @@
         <div mat-dialog-content>
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput  name="name" [(ngModel)]="courseData.name" required>
+                <input matInput  name="name" [(ngModel)]="courseData.title" required>
             </mat-form-field>
-            <div class="row">
-                <mat-form-field appearance="outline">
-                    <mat-label>Duration estimation</mat-label>
-                    <input matInput name="duration" [(ngModel)]="courseData.duration" required>
-                    <mat-hint>In weeks</mat-hint>
-                </mat-form-field>
-        
-                <mat-form-field>
-                    <mat-label>Select a Category</mat-label>
-                    <mat-select [(ngModel)]="courseData.category" placeholder="Category" name="category">
-                        <mat-option value="HydroponicsAtHome">Hydroponics at Home</mat-option>
-                        <mat-option value="GrowingPlants">Growing medicinal plants indoors</mat-option>
-                        <mat-option value="NewCourses">New Courses</mat-option>
-                    </mat-select>
-
-                </mat-form-field>
-                  
-            </div>
-            <div class="row">
-                <mat-form-field appearance="outline">
-                    <mat-label>Price</mat-label>
-                    <input matInput type="number" name="price" [(ngModel)]="courseData.price" required>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Image Link</mat-label>
-                    <input matInput name="name" [(ngModel)]="courseData.image" required>
-                </mat-form-field>
-    
-            </div>
            
           
             <mat-form-field appearance="outline" class="text-area" >

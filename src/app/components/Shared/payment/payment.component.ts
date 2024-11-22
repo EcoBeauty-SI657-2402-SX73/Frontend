@@ -2,7 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { CoursesService } from 'src/app/core/services/courses.service';
 import { DbService } from 'src/app/core/services/db.service';
+import { EnrollmentsService } from 'src/app/core/services/enrollments.service';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-payment',
@@ -11,9 +17,7 @@ import { DbService } from 'src/app/core/services/db.service';
 })
 export class PaymentComponent implements OnInit {
   courseId: any;
-  courseName: any;
-  coursePrice: any;
-  courseimage: any;
+  enrollmentId: any;
   subtotal: any;
   cardType: string = '';
   shipping: any;
@@ -25,9 +29,11 @@ export class PaymentComponent implements OnInit {
   cvv: FormControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
   paymentSuccessful: boolean = false;
   showSuccessDialog: boolean = false;
+  
 
   constructor(
-    private dbservice: DbService,
+    private courseService: CoursesService,
+    private enrollmentService: EnrollmentsService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router
@@ -42,30 +48,22 @@ export class PaymentComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       // Obtiene los parámetros de la URL
-      this.courseId = params['id'];
-      this.courseimage = params['image'];
-      this.courseName = params['name'];
-      this.coursePrice = params['price'];
-      // Carga el detalle del curso en el arreglo 'courses' para que aparezca en la tabla
-      this.courses.push({
-        image: this.courseimage,
-        name: this.courseName,
-        price: this.coursePrice,
-        quantity: 1, // Puedes establecer la cantidad inicial
-        total: this.coursePrice
-      });
-      this.calculateValues(); // Calculate the initial values
+      this.courseId = params['courseId'];
+      this.enrollmentId = params['enrollmentId'];
+      this.getCourseDetails(this.courseId);
     });
   }
 
-  getCourses() {
-    this.dbservice.getCourses().subscribe(
-      (courses: any) => {
-        this.courses = courses;
-        this.calculateValues(); // Calculate the values when courses change
+  getCourseDetails(courseId: string): void {
+    this.courseService.getCourseById(courseId).subscribe(
+      (course) => {
+        this.courses.push({
+          title: course.title,
+          description: course.description
+        });
       },
-      (error: any) => {
-        console.log(error);
+      (error) => {
+        console.error('Error fetching course details', error);
       }
     );
   }
@@ -76,6 +74,18 @@ export class PaymentComponent implements OnInit {
     this.paymentSuccessful = true;
     // Abre la ventana emergente de éxito.
     this.showSuccessDialog = true;
+    this.confirmEnrollment();
+  }
+
+  confirmEnrollment(): void {
+    this.enrollmentService.confirmEnrollment(this.enrollmentId).subscribe(
+      (response) => {
+        console.log('Enrollment confirmed successfully', response);
+      },
+      (error) => {
+        console.error('Error confirming enrollment', error);
+      }
+    );
   }
 
   // Method to calculate the subtotal, shipping, and total
@@ -101,11 +111,8 @@ export class PaymentComponent implements OnInit {
   // Métodos para mostrar el resumen del pedido
   getCoursesSummary() {
     return this.courses.map((course) => ({
-      name: course.name,
-      price: course.price,
-      image: course.image,
-      quantity: course.quantity,
-      total: course.price * course.quantity
+      title: course.title,
+      description: course.description
     }));
   }
 

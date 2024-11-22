@@ -9,7 +9,7 @@ import { CardComponentComponent } from '../card-component/card-component.compone
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss'],
+  styleUrls: ['./courses.component.scss']
 })
 
 export class CoursesComponent implements OnInit {
@@ -35,7 +35,7 @@ openAddCourse() {
 
 //GetAllCourses
 getAllCourses(){
-  this._coursesService.getListCourses().subscribe((data: any)=>{
+  this._coursesService.getAllCourses().subscribe((data: any)=>{
     this.Allcourses = data;
     //visualizetheAllcoursesIdinConsoleLog
     console.log(this.Allcourses);
@@ -44,17 +44,21 @@ getAllCourses(){
     this.filteredCoursesbyCategory2 = this.Allcourses.filter(course => course.category == 'GrowingPlants');
     this.filteredCoursesbyCategory3 = this.Allcourses.filter(course => course.category == 'NewCourses');
   })
-}
-redirectToPayment(curso: any) {
-  this.router.navigate(['/payment'], {
-      queryParams: {
-          id: curso.id, // Suponiendo que cada curso tiene un identificador único 'id'
-          image: curso.image,
-          name: curso.name,
-          price: curso.price
-          // Agrega otros datos del curso que desees enviar al componente de pago
-      }
-  });
-}
+  }
+  redirectToPayment(curso: any) {
+    this.router.navigate(['/payment'], {
+        queryParams: {
+            id: curso.id, // Suponiendo que cada curso tiene un identificador único 'id'
+            image: curso.image,
+            name: curso.name,
+            description: curso.description
+            // Agrega otros datos del curso que desees enviar al componente de pago
+        }
+    });
+  }
+
+  goToMyCourses(): void {
+    this.router.navigate(['/my-courses']);
+  }
 }
 

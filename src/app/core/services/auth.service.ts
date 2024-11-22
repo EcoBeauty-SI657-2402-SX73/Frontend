@@ -1,126 +1,62 @@
-import {inject, Injectable} from '@angular/core';
-import {
-  Auth,
-  AuthProvider,
-  authState,
-  createUserWithEmailAndPassword,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  updateProfile as updateProfileFirebase,
-  UserCredential,
-} from '@angular/fire/auth';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { UserCredential } from '@angular/fire/auth';
 
 export interface Credential {
-  email: string;
+  username: string;
   password: string;
 }
 
-export interface BackendCredential {
-  email: string;
-  password: string;
-  returnSecureToken: boolean;
+export interface AuthResponse {
+  id: any;
+  username: any;
+  token: any;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userData: any;
-  private auth: Auth = inject(Auth);
-  readonly authState$ = authState(this.auth);
-  private backUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=";
-  private firebaseKey = "AIzaSyDObw-57RzyDKVTlqGNkmgo1sK3n02_WHM";
-
+  private backendUrl = 'http://localhost:8080/api/v1/authentication';
   private secureToken: string = '';
+  private authStateSubject = new BehaviorSubject<any>(null);
+  authState$ = this.authStateSubject.asObservable();
 
-  signUpWithEmailAndPassword(credential: Credential): Promise<UserCredential> {
-    return createUserWithEmailAndPassword(
-      this.auth,
-      credential.email,
-      credential.password
-    );
+  constructor(private http: HttpClient) {}
+
+  signUpWithEmailAndPassword(credential: Credential): Observable<AuthResponse> {
+    return this.http.post<any>(`${this.backendUrl}/sign-up`, credential);
   }
-  logInWithEmailAndPassword(credential: Credential) {
-    return signInWithEmailAndPassword(
-      this.auth,
-      credential.email,
-      credential.password
-    );
+
+  logInWithEmailAndPassword(credential: Credential): Observable<AuthResponse> {
+    return this.http.post<any>(`${this.backendUrl}/sign-in`, credential);
   }
-  tokenGetter(){
+
+  tokenGetter() {
     const token = localStorage.getItem('authToken');
-    if (token){
+    if (token) {
       return token;
     } else {
       console.log('No hay token almacenado');
       return null;
     }
   }
-  tokenSetter(token: string){
+
+  tokenSetter(token: string, email: string) {
     this.secureToken = token;
     localStorage.setItem('authToken', token);
+    localStorage.setItem('userEmail', email); // Guarda el email en el localStorage
     console.log(this.secureToken);
+    this.authStateSubject.next({ token, email }); // Actualiza el estado de autenticación con el token y el email
   }
 
-  async logInForBackend(credential: Credential) {
-    let backendCredential: BackendCredential =  {
-      email: credential.email,
-      password: credential.password,
-      returnSecureToken: true,
-    };
-    const response = await fetch(`${this.backUrl} + ${this.firebaseKey}`,
-      {
-      method: 'POST',
-      body: JSON.stringify(backendCredential),
-      headers: {'Content-Type': 'application/json'},
-    })
-
-    if(!response.ok){
-      throw new Error('Network Error' + response.statusText);
-    }
-    return response.json();
-  }
-
-
-  logOut(): Promise<void> {
+  logOut(): void {
     localStorage.removeItem('authToken');
-    return this.auth.signOut();
+    localStorage.removeItem('userEmail');
+    this.secureToken = '';
+    this.authStateSubject.next(null); // Actualiza el estado de autenticación
+    console.log('Logged out');
   }
-
-  // providers
-
-  signInWithGoogleProvider(): Promise<UserCredential> {
-    const provider = new GoogleAuthProvider();
-
-    return this.callPopUp(provider);
-  }
-
-  signInWithGithubProvider(): Promise<UserCredential> {
-    const provider = new GithubAuthProvider();
-
-    return this.callPopUp(provider);
-  }
-
-  async callPopUp(provider: AuthProvider): Promise<UserCredential> {
-    try {
-      const result = await signInWithPopup(this.auth, provider);
-
-      return result;
-    } catch (error: any) {
-      return error;
-    }
-  }
-
-  // Método para actualizar el perfil del usuario en Firebase
-  async updateProfile(user: any, userData: any): Promise<void> {
-    try {
-      await updateProfileFirebase(user, userData);
-    } catch (error) {
-      throw error; // Puedes manejar el error de la manera que desees
-    }
-  }
-
 
 }

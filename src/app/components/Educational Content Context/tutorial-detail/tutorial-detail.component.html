@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="tutorial-detail-container" *ngIf="tutorial">
+        <div class="tutorial-header">
+        <h1>{{ tutorial.name }}</h1>
+        <p class="tutorial-description">{{ tutorial.description }}</p>
+        </div>
+        <div class="tutorial-video">
+        <iframe [src]="tutorial.videoUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tutorial-actions">
+        <button mat-raised-button color="primary" (click)="saveTutorialToCourse()">Save to Learning Path</button>
+        </div>
+    </div>
+</div>

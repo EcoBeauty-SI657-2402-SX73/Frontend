@@ -84,19 +84,22 @@ export default class LogInComponent {
     if (this.form.invalid) return;
 
     const credential: Credential = {
-      email: this.form.value.email || '',
+      username: this.form.value.email || '',
       password: this.form.value.password || '',
     };
 
     try {
-      let identity = await this.authService.logInForBackend(credential)
-      this.authService.tokenSetter(identity.idToken);
-      await this.authService.logInWithEmailAndPassword(credential);
-      const snackBarRef = this.openSnackBar();
-      snackBarRef.afterDismissed().subscribe(() => {
-        console.log("funciona")
-        this.router.navigateByUrl('/home');
-      });
+      let identity = await this.authService.logInWithEmailAndPassword(credential).toPromise();
+      if (identity && identity.token) {
+        this.authService.tokenSetter(identity.token, identity.username);
+        const snackBarRef = this.openSnackBar();
+        snackBarRef.afterDismissed().subscribe(() => {
+          console.log("funciona");
+          this.router.navigateByUrl('/home');
+        });
+      } else {
+        throw new Error('Invalid login response');
+      }
     } catch (error) {
       console.error(error);
     }

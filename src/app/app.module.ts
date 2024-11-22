@@ -51,6 +51,12 @@ import {AddRecipesComponent} from "./components/Recipes/add-recipes/add-recipes.
 import {RecipeDetailComponent} from "./components/Recipes/recipe-detail/recipe-detail.component";
 import { ChangePasswordComponent } from './components/Shared/change-password/change-password.component';
 import {CacheInterceptor} from "./core/services/cache.interceptor";
+import { CreateProfileComponent } from './components/Shared/create-profile/create-profile.component';
+import { ConfirmDialogComponent } from './components/Course Context/confirm-dialog/confirm-dialog.component';
+import { MycoursesComponent } from './components/Course Context/mycourses/mycourses.component';
+import { LearningPathComponent } from './components/Course Context/learning-path/learning-path.component';
+import { TutorialDetailComponent } from './components/Educational Content Context/tutorial-detail/tutorial-detail.component';
+import { SafeUrlPipe } from './components/Shared/safeUrl/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -68,7 +74,13 @@ import {CacheInterceptor} from "./core/services/cache.interceptor";
     RecipesComponent,
     AddRecipesComponent,
     RecipeDetailComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    CreateProfileComponent,
+    ConfirmDialogComponent,
+    MycoursesComponent,
+    LearningPathComponent,
+    TutorialDetailComponent,
+    SafeUrlPipe
 
   ],
   imports: [

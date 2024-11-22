@@ -1,142 +1,15 @@
-<section class="container">
-
+<div class="content">
+    <section class="container">
     <div class="first-block">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="top">
-            <h1 class="title">
-                Explore issues and skills
-            </h1>
-
-            <button mat-raised-button class="button1" color="disabled" (click)="openAddCourse()">Add Course</button>
-        </div>
-
-        <!-- Categories -->
-
+      <div class="top">
+        <h1 class="title">
+          Explore issues and skills
+        </h1>
         
+          <button mat-raised-button color="primary" (click)="goToMyCourses()">My Courses</button>
+        
+      </div>
     </div>
-
-
     <app-card-component></app-card-component>
-
-<!-- 
-    <div class="second-block">
-        <h1 class="title">
-            Hydroponics at Home
-        </h1>
-
-            
-        <app-card-component></app-card-component>
-        <!-- <div class="card-container">
-            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory1">
-
-                    <div class="box" >
-
-                        <mat-card-header>
-                            <img [src]="allcourse.image" alt="{{allcourse.name}}">
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div class="image-text" >
-                                <h2>{{allcourse.name}}</h2>
-                                <ul>
-                                    <li>Duration: {{allcourse.duration}} weeks </li>
-                                    <li> Description: {{allcourse.description}}</li>
-                                </ul>
-                            </div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">$ {{ allcourse.price }}</button>
-                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
-                        </mat-card-actions>
-
-
-                    </div>
-
-
-            </mat-card>
-
-        </div> -->
-
-
-
-    <!-- <div class="trhith-block">
-        <h1 class="title">
-            Growing medicinal plants indoors
-        </h1>
-        <div class="card-container-2">
-            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory2" class="container-2">
-
-                    <div class="box" >
-
-                        <mat-card-header>
-                            <img [src]="allcourse.image" alt="{{allcourse.name}}">
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div class="image-text" >
-                                <h2>{{allcourse.name}}</h2>
-                                <ul>
-                                    <li>Duration: {{allcourse.duration}} weeks </li>
-                                    <li> Description: {{allcourse.description}}</li>
-                                </ul>
-                            </div>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">${{allcourse.price }}</button>
-                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
-                        </mat-card-actions>
-
-
-                    </div>
-
-
-            </mat-card>
-
-        </div>
-
-    </div>
-
-    <div class="trhith-block">
-        <h1 class="title">
-            New Courses
-        </h1>
-        <div class="card-container-3">
-            <mat-card *ngFor="let allcourse of filteredCoursesbyCategory3" class="container-3">
-
-                    <div class="box" >
-
-                        <mat-card-header>
-                            <img [src]="allcourse.image" alt="{{allcourse.name}}">
-                        </mat-card-header>
-                        <mat-card-content>
-                            <div class="image-text" >
-                                <h2>{{allcourse.name}}</h2>
-                                <ul>
-                                    <li>Duration: {{allcourse.duration}} weeks </li>
-                                    <li> Description: {{allcourse.description}}</li>
-                                </ul>
-                                <p>Created At: {{allcourse.dateCreated | date}}</p>
-                            </div>
-
-                        </mat-card-content>
-
-                        <mat-card-actions>
-                            <button mat-button class="matBtn" (click)="redirectToPayment(allcourse)">{{ allcourse.price | currency}}</button>
-                            <button mat-button class="matBtn">{{ allcourse.rating }} ⭐</button>
-                        </mat-card-actions>
-
-
-                    </div>
-
-
-            </mat-card>
-
-        </div>
-
-    </div> -->
-
-</section>
-
+  </section>
+</div>

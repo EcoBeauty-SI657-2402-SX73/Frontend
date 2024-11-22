@@ -183,6 +183,10 @@ export class HomeComponent {
     this.currentReviewIndex = (this.currentReviewIndex - 1 + this.reviews.length) % this.reviews.length;
   }
 
+  onRegisterClick(): void {
+    this._router.navigateByUrl('/createstudent');
+  }
+
 
 }
 
