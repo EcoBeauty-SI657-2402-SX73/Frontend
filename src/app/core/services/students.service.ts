@@ -9,8 +9,8 @@ import { ProfileResponse, Student, StudentResponse } from '../models/student.mod
 })
 export class StudentsService {
 
-  private studentUrl = 'http://localhost:8080/api/v1/students';
-  private profileUrl = 'http://localhost:8080/api/v1/profiles';
+  private studentUrl = 'https://ecobeauty-backend-dhc7bugyekc5e8dv.canadacentral-01.azurewebsites.net/api/v1/students';
+  private profileUrl = 'https://ecobeauty-backend-dhc7bugyekc5e8dv.canadacentral-01.azurewebsites.net/api/v1/profiles';
 
   constructor(private http: HttpClient) { }
 

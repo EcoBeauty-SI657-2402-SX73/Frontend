@@ -7,8 +7,7 @@ import { CourseModel } from '../models/course.model';
     providedIn: 'root'
 })
 export class CoursesService {
-  baseUrl = 'http://localhost:8080/api/v1/courses';
-  //baseUrl = 'http://localhost:8000/api/green-grow/v1/courses';
+  baseUrl = 'https://ecobeauty-backend-dhc7bugyekc5e8dv.canadacentral-01.azurewebsites.net/api/v1/courses';
 
     constructor(private http: HttpClient) { }
 

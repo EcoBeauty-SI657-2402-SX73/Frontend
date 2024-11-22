@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgForm } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class CreateProfileComponent {
     country: ''
   };
 
-  constructor(private studentsService: StudentsService) {}
+  constructor(private studentsService: StudentsService, private snackBar: MatSnackBar) {}
 
   onSubmit(form: NgForm) {
     if (form.invalid) {
@@ -32,9 +33,15 @@ export class CreateProfileComponent {
     }
     this.studentsService.createStudent(this.profile).subscribe(response => {
       console.log('Profile and Student created successfully', response);
+      this.snackBar.open('Perfil creado correctamente', 'Cerrar', {
+        duration: 3000, // Duración en milisegundos
+      });
       // Handle success response
     }, error => {
       console.error('Error creating profile and student', error);
+      this.snackBar.open('Error al crear perfil', 'Cerrar', {
+        duration: 3000, // Duración en milisegundos
+      });
       // Handle error response
     });
   }

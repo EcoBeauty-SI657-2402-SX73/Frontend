@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 import { UserCredential } from '@angular/fire/auth';
 
 export interface Credential {
@@ -18,10 +18,11 @@ export interface AuthResponse {
   providedIn: 'root',
 })
 export class AuthService {
-  private backendUrl = 'http://localhost:8080/api/v1/authentication';
+  private backendUrl = 'https://ecobeauty-backend-dhc7bugyekc5e8dv.canadacentral-01.azurewebsites.net/api/v1/authentication';
   private secureToken: string = '';
   private authStateSubject = new BehaviorSubject<any>(null);
   authState$ = this.authStateSubject.asObservable();
+  private authState: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -48,7 +49,8 @@ export class AuthService {
     localStorage.setItem('authToken', token);
     localStorage.setItem('userEmail', email); // Guarda el email en el localStorage
     console.log(this.secureToken);
-    this.authStateSubject.next({ token, email }); // Actualiza el estado de autenticación con el token y el email
+    this.authStateSubject.next({ token, email });
+    this.authState = true; // Actualiza el estado de autenticación con el token y el email
   }
 
   logOut(): void {
@@ -56,7 +58,15 @@ export class AuthService {
     localStorage.removeItem('userEmail');
     this.secureToken = '';
     this.authStateSubject.next(null); // Actualiza el estado de autenticación
+    this.authState = false;
     console.log('Logged out');
   }
 
+  isLoggedIn(): boolean {
+    return this.authState;
+  }
+
+  get auth(): Observable<boolean> {
+    return of(this.authState);
+  }
 }

@@ -8,7 +8,7 @@ import { Enrollment } from '../models/enrollment.model';
 })
 export class EnrollmentsService {
 
-  private enrollmentsUrl = 'http://localhost:8080/api/v1/enrollments';
+  private enrollmentsUrl = 'https://ecobeauty-backend-dhc7bugyekc5e8dv.canadacentral-01.azurewebsites.net/api/v1/enrollments';
 
   constructor(private http: HttpClient) { }
 

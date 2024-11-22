@@ -23,25 +23,25 @@ import { LearningPathComponent } from './components/Course Context/learning-path
 import { TutorialDetailComponent } from './components/Educational Content Context/tutorial-detail/tutorial-detail.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
-  { path: 'courses', component: CoursesComponent },
-  { path: 'my-courses', component: MycoursesComponent },
-  { path: 'my-courses/:id/learning-path', component: LearningPathComponent },
-  { path: 'login', component: LogInComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Add this
+  { path: 'courses', component: CoursesComponent, canActivate: [authGuard] }, // Add this
+  { path: 'my-courses', component: MycoursesComponent, canActivate: [authGuard] }, // Add this
+  { path: 'my-courses/:id/learning-path', component: LearningPathComponent, canActivate: [authGuard] }, // Add this
+  { path: 'login', component: LogInComponent,  },
   { path: 'signup', component: SignUpComponent },
-  { path: 'createstudent', component: CreateProfileComponent},
-  { path: 'articles', component: ArticlesComponent },
-  { path: 'community', component: ComunnityComponent },
-  { path: 'posts-detail/:id', component: PostsDetailComponent },
-  { path: 'createpost', component: CreatepostComponent },
-  { path: 'enrollments', component: EnrollmentsListComponent },
-  { path: 'payment', component: PaymentComponent }, // Agrega esta ruta para el componente de pago
-  { path: 'profile', component: ProfileComponent},
-  { path: 'recipes', component: RecipesComponent},
-  { path: 'createrecipe', component: AddRecipesComponent},
-  { path: 'recipe-detail/:id', component: RecipeDetailComponent},
-  { path: 'tutorial-detail/:id', component: TutorialDetailComponent},
-  { path: 'change-password', component: ChangePasswordComponent},
+  { path: 'createstudent', component: CreateProfileComponent, canActivate: [authGuard] },
+  { path: 'articles', component: ArticlesComponent, canActivate: [authGuard] },
+  { path: 'community', component: ComunnityComponent, canActivate: [authGuard] },
+  { path: 'posts-detail/:id', component: PostsDetailComponent, canActivate: [authGuard] },
+  { path: 'createpost', component: CreatepostComponent, canActivate: [authGuard] },
+  { path: 'enrollments', component: EnrollmentsListComponent, canActivate: [authGuard] },
+  { path: 'payment', component: PaymentComponent, canActivate: [authGuard]  }, // Agrega esta ruta para el componente de pago
+  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+  { path: 'recipes', component: RecipesComponent, canActivate: [authGuard]},
+  { path: 'createrecipe', component: AddRecipesComponent, canActivate: [authGuard]},
+  { path: 'recipe-detail/:id', component: RecipeDetailComponent, canActivate: [authGuard]},
+  { path: 'tutorial-detail/:id', component: TutorialDetailComponent, canActivate: [authGuard]},
+  { path: 'change-password', component: ChangePasswordComponent, canActivate: [authGuard]},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', redirectTo: 'login' },
 
