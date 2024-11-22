@@ -1,0 +1,40 @@
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  mat-card-title {
+    font-size: 1.5em;
+    color: #267144;
+  }
+  
+  mat-card-subtitle {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  mat-card-content {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }

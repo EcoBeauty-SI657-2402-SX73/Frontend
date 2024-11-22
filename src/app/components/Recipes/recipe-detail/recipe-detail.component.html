@@ -1,9 +1,20 @@
-<div class="container" *ngIf="recipe">
-  <h1>{{ recipe.name }}</h1>
-  <p><strong>Description:</strong> {{ recipe.description }}</p>
-  <img [src]="recipe.image" alt="{{ recipe.name }}" class="recipe-image">
-  <p class="steps_title"><strong>Steps:</strong></p>
-  <ol>
-    <li *ngFor="let step of recipe.steps">{{ step }}</li>
-  </ol>
+<div class="content">
+  <div class="recipe-detail-container" *ngIf="recipe">
+    <div class="recipe-header">
+      <h1>{{ recipe.name }}</h1>
+      <p class="recipe-description">{{ recipe.description }}</p>
+    </div>
+    <div class="recipe-image">
+      <img [src]="recipe.image" alt="{{ recipe.name }}">
+    </div>
+    <div class="recipe-steps">
+      <h3>Steps</h3>
+      <ul>
+        <li *ngFor="let step of recipe.steps">{{ step }}</li>
+      </ul>
+    </div>
+    <div class="recipe-actions">
+      <button mat-raised-button color="primary" (click)="saveRecipeToCourse()">Save to Learning Path</button>
+    </div>
+  </div>
 </div>

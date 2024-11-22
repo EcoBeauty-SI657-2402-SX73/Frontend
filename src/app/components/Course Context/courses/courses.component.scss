@@ -1,37 +1,60 @@
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-.top h1{
-    float: left;
-}
-
-.row-container{
+  }
+  
+  .top {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    color: #267144;
+    margin-bottom: 20px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
+  button.mat-raised-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  
+  .button1 {
+    background-color: #ffffff;
+  }
+  
+  /* Otros estilos */
+  .row-container {
     overflow: scroll;
-    width: 100%
-}
-
-.row-inner{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
-    gap: 24px;
-}
-
-.grid-container{
-    padding: 24px;
-}
-
-.responsive-grid {
+    width: 100%;
+  }
+  
+  .row-inner {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 24px;
-}
-
-.container2 {
+  }
+  
+  .grid-container {
+    padding: 24px;
+  }
+  
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  
+  .container2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 200px;
@@ -39,174 +62,172 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-}
-
-.box {
+  }
+  
+  .box {
     position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
-}
-
-.box-large {
+  }
+  
+  .box-large {
     grid-column: span 2;
     grid-row: span 2;
-}
-
-.box-small {
+  }
+  
+  .box-small {
     grid-column: span 1;
     grid-row: span 1;
-}
-
-.box img {
+  }
+  
+  .box img {
     width: 100%;
     height: 100%;
     object-fit: fill; /* Forzar a llenar todo el contenedor */
     display: block;
-}
-
-.topleft, .bottomleft {
+  }
+  
+  .topleft, .bottomleft {
     position: absolute;
     padding: 10px;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     font-size: 1.2rem;
-}
-
-.topleft {
+  }
+  
+  .topleft {
     top: 10px;
     left: 10px;
-}
-
-.bottomleft {
+  }
+  
+  .bottomleft {
     bottom: 10px;
     left: 10px;
-}
-
-/* Ajustar estilos específicos para dispositivos móviles */
-@media (max-width: 768px) {
+  }
+  
+  /* Ajustar estilos específicos para dispositivos móviles */
+  @media (max-width: 768px) {
     .container2 {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 150px;
     }
-
+  
     .box-large {
-        grid-column: span 2;
-        grid-row: span 2;
+      grid-column: span 2;
+      grid-row: span 2;
     }
-
+  
     .box-small {
-        grid-column: span 1;
-        grid-row: span 1;
+      grid-column: span 1;
+      grid-row: span 1;
     }
-}
-/* Estilos para diferentes bloques */
-.card-container, .card-container-2, .card-container-3 {
+  }
+  
+  /* Estilos para diferentes bloques */
+  .card-container, .card-container-2, .card-container-3 {
     text-align: left;
     margin-bottom: 1%;
-}
-.container {
-    
+  }
+  
+  .container {
     width: 100%;
     padding: 1%;
     box-sizing: border-box;
-
-}
-
-/* Encabezados */
-.title {
+  }
+  
+  /* Encabezados */
+  .title {
     font-size: 300%;
-    margin: 2% ;
+    margin: 2%;
     color: #000; /* Color de texto en negro */
     margin-left: 20px;
-}
-
-/* Botones */
-button.mat-raised-button {
+  }
+  
+  /* Botones */
+  button.mat-raised-button {
     font-size: 2%;
     padding: 2% 4%;
-    
-    
-}
-
-.button1{
+  }
+  
+  .button1 {
     background-color: #ffffff;
     margin-left: 60%;
     margin-top: 40px;
-}
-
-/* Iconos */
-mat-icon {
+  }
+  
+  /* Iconos */
+  mat-icon {
     font-size: 4%;
     margin: 2%;
-}
-
-/* Bloques de contenido */
-.first-block, .second-block, .trhith-block {
+  }
+  
+  /* Bloques de contenido */
+  .first-block, .second-block, .trhith-block {
     width: 100%;
     margin-bottom: 4%;
-}
-
-/* Imágenes */
-.box img {
+  }
+  
+  /* Imágenes */
+  .box img {
     width: 100%;
     height: auto;
-}
-
-/* Grid */
-mat-grid-list {
+  }
+  
+  /* Grid */
+  mat-grid-list {
     width: 100%;
-}
-
-/* Tarjetas */
-mat-card {
+  }
+  
+  /* Tarjetas */
+  mat-card {
     width: 40%;
     margin: 2%;
     display: inline-block;
     color: #000; /* Color de texto en negro */
-}
-
-
-.matBtn{
+  }
+  
+  .matBtn {
     width: 50%;
-}
-.box{
+  }
+  
+  .box {
     transition: box-shadow 0.3s ease;
-    cursor:pointer;
+    cursor: pointer;
     position: relative;
     gap: 200px;
-}
-
-.box:hover{
-    box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.3);
-}
-
-/* Ajustar estilos específicos para dispositivos móviles si es necesario */
-@media (max-width: 768px) {
+  }
+  
+  .box:hover {
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Ajustar estilos específicos para dispositivos móviles si es necesario */
+  @media (max-width: 768px) {
     .container {
-        padding: 4%;
+      padding: 4%;
     }
-
+  
     .title {
-        font-size: 300%;
+      font-size: 300%;
     }
-
+  
     button.mat-raised-button {
-        font-size: 3%;
-        padding: 3% 6%;
+      font-size: 3%;
+      padding: 3% 6%;
     }
-
+  
     mat-icon {
-        font-size: 6%;
-        margin: 3%;
+      font-size: 6%;
+      margin: 3%;
     }
-
+  
     .box img {
-        width: 100%;
+      width: 100%;
     }
-
+  
     mat-card {
-        width: 100%;
-        margin: 4% 0;
+      width: 100%;
+      margin: 4% 0;
     }
-}
+  }

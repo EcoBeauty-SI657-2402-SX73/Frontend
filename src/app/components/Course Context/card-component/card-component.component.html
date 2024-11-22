@@ -6,11 +6,9 @@
         <img mat-card-image [src]="element.image" alt="pic-description"> 
         <mat-card-content>
             <p>{{element.description}}</p>
-            <p> Price: {{element.price}}</p>
-            <p> Creator: {{element.creator}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>Suscribe</button>
+            <button mat-button (click)="subscribeToCourse(element.name, element.description)">Suscribe</button>
             <button mat-button>Add to favorites</button>
         </mat-card-actions>
     </mat-card>
@@ -25,11 +23,9 @@
         <img mat-card-image [src]="element.image" alt="pic-description"> 
         <mat-card-content>
             <p>{{element.description}}</p>
-            <p> Price: {{element.price}}</p>
-            <p> Creator: {{element.creator}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>Suscribe</button>
+            <button mat-button (click)="subscribeToCourse(element.name, element.description)">Suscribe</button>
             <button mat-button>Add to favorites</button>
         </mat-card-actions>
     </mat-card>
@@ -44,11 +40,9 @@
         <img mat-card-image [src]="element.image" alt="pic-description"> 
         <mat-card-content>
             <p>{{element.description}}</p>
-            <p> Price: {{element.price}}</p>
-            <p> Creator: {{element.creator}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>Suscribe</button>
+            <button mat-button (click)="subscribeToCourse(element.name, element.description)">Suscribe</button>
             <button mat-button>Add to favorites</button>
         </mat-card-actions>
     </mat-card>

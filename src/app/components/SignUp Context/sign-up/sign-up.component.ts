@@ -14,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { AuthService, Credential } from 'src/app/core/services/auth.service';
+import { AuthResponse, AuthService, Credential } from 'src/app/core/services/auth.service';
 import { ButtonProviders } from 'src/app/components/button-providers/button-providers.component';
 
 interface SignUpForm {
@@ -93,7 +93,7 @@ export default class SignUpComponent {
     if (this.form.invalid) return;
 
     const credential: Credential = {
-      email: this.form.value.email || '',
+      username: this.form.value.email || '',
       password: this.form.value.password || '',
     };
 
@@ -104,18 +104,17 @@ export default class SignUpComponent {
 
     try {
 
-      const userCredential = await this.authService.signUpWithEmailAndPassword(credential);
-      const user = userCredential.user;
-      let identity = await this.authService.logInForBackend(credential)
-      this.authService.tokenSetter(identity.idToken);
-      // Actualiza los datos adicionales del usuario en Firebase
-      await this.authService.updateProfile(user, userData);
-
-      const snackBarRef = this.openSnackBar();
-
-      snackBarRef.afterDismissed().subscribe(() => {
-        this._router.navigateByUrl('/home');
-      });
+      const userCredential = await this.authService.signUpWithEmailAndPassword(credential).toPromise();
+      let identity = await this.authService.logInWithEmailAndPassword(credential).toPromise();
+      if (identity && identity.token) {
+        this.authService.tokenSetter(identity.token, identity.username);
+        const snackBarRef = this.openSnackBar();
+        snackBarRef.afterDismissed().subscribe(() => {
+          this._router.navigateByUrl('/home');
+        });
+      } else {
+        throw new Error('Invalid login response');
+      }
     } catch (error) {
       console.error(error);
     }

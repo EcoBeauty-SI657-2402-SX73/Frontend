@@ -37,29 +37,20 @@
       <table>
         <thead>
           <tr>
-            <th>Image</th>
             <th>Course</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let course of courses">
-            <td><img [src]="course.image" alt="{{ course.image }}" width="50" height="50"></td>
-            <td>{{ course.name }}</td>
-            <td>{{ course.price }}</td>
-            <td>{{ course.quantity }}</td>
-            <td>{{ course.total }}</td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.description }}</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td></td>
             <td></td>
-            <td>{{ getSubtotalLabel() }}</td>
-            <td>{{ getShippingLabel() }}</td>
-            <td>{{ getTotalLabel() }}</td>
           </tr>
         </tfoot>
       </table>

@@ -1,0 +1,38 @@
+<div class="create-profile">
+    <h2>Registro de estudiante</h2>
+    <form (ngSubmit)="onSubmit(profileForm)" #profileForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" class="form-control" required [(ngModel)]="profile.firstName" name="firstName" #firstName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" class="form-control" required [(ngModel)]="profile.lastName" name="lastName" #lastName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" required [(ngModel)]="profile.email" name="email" #email="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" id="street" class="form-control" required [(ngModel)]="profile.street" name="street" #street="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="number">Number</label>
+        <input type="text" id="number" class="form-control" required [(ngModel)]="profile.number" name="number" #number="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" class="form-control" required [(ngModel)]="profile.city" name="city" #city="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="postalCode">Postal Code</label>
+        <input type="text" id="postalCode" class="form-control" required [(ngModel)]="profile.postalCode" name="postalCode" #postalCode="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" id="country" class="form-control" required [(ngModel)]="profile.country" name="country" #country="ngModel">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!profileForm.form.valid">Create Profile</button>
+    </form>
+  </div>

@@ -1,0 +1,21 @@
+<div class="content">
+  <h2>My Enrollments</h2>
+  <div *ngIf="enrollments.length === 0">
+    <p>No enrollments found.</p>
+  </div>
+  <div *ngFor="let enrollment of enrollments" class="enrollment-container">
+    <mat-card class="card" [ngClass]="enrollment.status">
+      <mat-card-header>
+        <mat-card-title>{{ getCourseTitle(enrollment.courseId) }}</mat-card-title>
+        <mat-card-subtitle>Status: {{ enrollment.status }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- Otros detalles del enrollment -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" *ngIf="enrollment.status === 'requested'" (click)="goToPayment(enrollment.courseId, enrollment.enrollmentId)">Pagar</button>
+        <button mat-button color="warn" *ngIf="enrollment.status === 'requested'" (click)="cancelEnrollment(enrollment.enrollmentId)">Cancelar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
